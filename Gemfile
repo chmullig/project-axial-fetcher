@@ -1,3 +1,4 @@
+ruby "1.9.3"
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
@@ -6,6 +7,7 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'pg'
 
 # Use unicorn as the web server
 # gem 'unicorn'
