@@ -15,6 +15,13 @@ FoursquareSpeed::Application.routes.draw do
       get 'venue_details'
     end
   end
+
+  resources :api do
+    collection do
+      get 'checkins'
+      get 'user'
+    end
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

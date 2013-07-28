@@ -9,8 +9,10 @@ class ExamplesController < ApplicationController
   
   def user
   end
-  
+ 
+  respond_to :json
   def checkins
+    respond_with(current_user) 
   end
   
   def friends
