@@ -10,7 +10,7 @@ class ExamplesController < ApplicationController
   def user
   end
  
-  respond_to :json
+  respond_to :json, :xml, :html
   def checkins
     respond_with(current_user) 
   end
