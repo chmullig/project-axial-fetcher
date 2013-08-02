@@ -10,31 +10,19 @@ class ApiController < ApplicationController
   def show
   end
 
-  respond_to :json  
+  respond_to :json, :html, :xml
   def pull_4sq
-    added = {}
-    User.where("token != ''").each do |u|
-      num = u.pull_checkins
-      added[u.id] = num
-    end
-    render json: added
+    num = 0
+    num = User.user_from_token(session['access_token']).pull_checkins
+    render json: num
   end
   
-  respond_to :json, :xml
+  respond_to :json, :xml, :html
   def checkins
-    #loop to get all users
-    #loop to get all checkins
-    count = 250
-    offset = 0
-    array = []
-    while count == 250
-      checkins = current_user.checkins(:limit => count, :offset => offset)
-      array += checkins
-      count = checkins.count
-      offset += count
-    end
+    u = User.user_from_token(session['access_token'])
+    u.pull_checkins
 
-    respond_with(array) 
+    render json: u.checkins.map{|c| ActiveSupport::JSON.decode(c.blob)  }
   end
   
 end

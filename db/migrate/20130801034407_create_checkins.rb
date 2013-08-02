@@ -3,7 +3,7 @@ class CreateCheckins < ActiveRecord::Migration
     create_table :checkins do |t|
       t.belongs_to :user
       t.string :checkin_id
-      t.datetime :checkedin_at
+      t.string :checkedin_at
       t.text :blob
 
       t.timestamps

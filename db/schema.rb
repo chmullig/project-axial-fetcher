@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130801034407) do
   create_table "checkins", :force => true do |t|
     t.integer  "user_id"
     t.string   "checkin_id"
-    t.datetime "checkedin_at"
+    t.string   "checkedin_at"
     t.text     "blob"
     t.datetime "created_at"
     t.datetime "updated_at"
