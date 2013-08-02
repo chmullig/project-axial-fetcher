@@ -20,6 +20,7 @@ FoursquareSpeed::Application.routes.draw do
     collection do
       get 'checkins'
       get 'user'
+      get 'pull_4sq'
     end
   end
   

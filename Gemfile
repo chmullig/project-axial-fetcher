@@ -2,6 +2,7 @@ ruby "1.9.3"
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
+gem 'rake', '0.8.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,7 +37,6 @@ gem 'pg'
 
 gem "settingslogic"
 gem "haml"
-gem "json"
+#gem "json"
 gem "typhoeus"
-
-# gem "quimby"
+#gem "twitter"

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  belongs_to: 
+  checkedin_at: 2013-07-31 23:44:07
+  blob: MyText
+  timestamps: 2013-07-31 23:44:07
+
+two:
+  belongs_to: 
+  checkedin_at: 2013-07-31 23:44:07
+  blob: MyText
+  timestamps: 2013-07-31 23:44:07

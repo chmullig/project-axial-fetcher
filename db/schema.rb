@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110405170450) do
+ActiveRecord::Schema.define(:version => 20130801034407) do
+
+  create_table "checkins", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "checkin_id"
+    t.datetime "checkedin_at"
+    t.text     "blob"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "uid"
