@@ -21,6 +21,9 @@ FoursquareSpeed::Application.routes.draw do
       get 'checkins'
       get 'user'
       get 'pull_4sq'
+      get 'pull_4sq_all'
+      get 'geojson'
+      get 'geojson_all'
     end
   end
   

@@ -13,11 +13,14 @@ class User < ActiveRecord::Base
     User.find_or_create_by_token(current_user.access_token)
   end
 
+  def name
+    @name ||= fsq_user.name
+  end
+
   def pull_checkins
     count = 250
     offset = 0
     last_pulled = checkins.order(:checkedin_at).last.try(:checkedin_at) || '1370059200'
-    Rails.logger.debug "Last pulled is: #{last_pulled}"
 
     while count == 250
       newcheckins = fsq_user.checkins(limit: count, offset: offset, afterTimestamp: last_pulled )
