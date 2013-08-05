@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  belongs_to: 
+  tweeted_at: 2013-08-04 18:48:01
+  blob: MyText
+  timestamps: 2013-08-04 18:48:01
+
+two:
+  belongs_to: 
+  tweeted_at: 2013-08-04 18:48:01
+  blob: MyText
+  timestamps: 2013-08-04 18:48:01

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801034407) do
+ActiveRecord::Schema.define(:version => 20130804224834) do
 
   create_table "checkins", :force => true do |t|
     t.integer  "user_id"
@@ -21,11 +21,22 @@ ActiveRecord::Schema.define(:version => 20130801034407) do
     t.datetime "updated_at"
   end
 
+  create_table "tweets", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "tweeted_at"
+    t.text     "blob"
+    t.datetime "timestamps"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "uid"
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "twitter"
   end
 
 end

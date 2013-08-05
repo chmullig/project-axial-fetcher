@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 
     user = User.find_or_create_by_token(@access_token)
     user.token = @access_token
+    user.name = user.fsq_user.name
     user.save!
 
     redirect_to examples_path
