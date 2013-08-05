@@ -51,7 +51,10 @@ class ApiController < ApplicationController
           'id' => c['id'],
           'timestamp' => c['createdAt'],
           'datetime' => Time.strptime(c['createdAt'].to_s, '%s').to_datetime,
-          'user' => u.name
+          'user' => u.name,
+          'text' => c['shout'] || '',
+          'photos' => c['photos']['items'],
+          'likes' => c['likes']['count']
          }
       }
     end
@@ -74,7 +77,11 @@ class ApiController < ApplicationController
             'id' => c['id'],
             'timestamp' => c['createdAt'],
             'datetime' => Time.strptime(c['createdAt'].to_s, '%s').to_datetime,
-            'user' => u.name
+            'venue' => c['venue']['name'],
+            'user' => u.name,
+            'text' => c['shout'] || '',
+            'photos' => c['photos']['items'],
+            'likes' => c['likes']['count']
            }
         }
       end
