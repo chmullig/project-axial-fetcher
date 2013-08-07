@@ -66,6 +66,7 @@ class ApiController < ApplicationController
     checkins = []
     User.where("token != ''").each do |u|
       u.checkins.map{|c| ActiveSupport::JSON.decode(c.blob)}.each do |c|
+        next if c.has_key? 'private'
         checkins << {
           'type' => 'Feature',
           'geometry' => {
@@ -80,8 +81,8 @@ class ApiController < ApplicationController
             'venue' => c['venue']['name'],
             'user' => u.name,
             'text' => c['shout'] || '',
-            'photos' => c['photos']['items'],
-            'likes' => c['likes']['count']
+            'photo' => c['photos'].try(:[], 'items').try(:first).try(:[], 'url') || '',
+            'likes' => c['likes']['count'] + c['comments']['count']
            }
         }
       end
